@@ -21,8 +21,16 @@ func main() {
 	c := 0
 	for true {
 		if c > 100 {
+			fmt.Println("c:", c)
 			break
 		}
 		c++
+	}
+
+	// loop over array using range
+	a := []int{1, 2, 3} // array of int with 3 values
+	// for index, element of range
+	for i, n := range a {
+		fmt.Println(i, n)
 	}
 }
