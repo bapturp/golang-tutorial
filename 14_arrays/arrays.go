@@ -43,14 +43,4 @@ func main() {
 			fmt.Println(v)
 		}
 	}
-
-	s := "abcde"
-	runeString := []rune(s)
-	for _, v := range runeString {
-		fmt.Printf("%v\n", v)
-	}
-
-	byteArr := []byte{'a', 'b', 'c'}
-	bStr := string(byteArr[:])
-	fmt.Println(bStr)
 }
