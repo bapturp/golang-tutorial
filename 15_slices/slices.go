@@ -6,11 +6,22 @@ import (
 )
 
 /*
-Slices are like arrays but can grow
+slice := make([]T, len, cap)
+	T -> type of elements (int, float, string...)
+	len -> length
+	cap -> (optional) capacity, if omitted it's same same as length
 
-  var name []datatype
+make allocates an array and returns a slice that refers to that array
 
-  slice := make([]string, size, capacity) //
+len(slice) // returns length
+cap(slice) // returns capacity
+
+A slice can also be formed by slicing an existing array or slice
+b :=[]byte{'g','o','l','a','n','g'}
+b[1:4] -> [o l a] 	// from index 1 to index 4 excluded
+b[:2]  -> [g o] 	// from start to index 2 excluded
+b[2:]  -> [l a n g] // from index 2 to the end
+b[:]   -> b 		// the whole slice
 */
 
 func main() {
