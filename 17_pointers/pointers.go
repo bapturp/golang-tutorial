@@ -10,27 +10,29 @@ func changeVal(n *int) {
 }
 
 func doubleArrayValues(arr *[4]int) {
-	for x := 0; x < 4; x++ {
-		arr[x] *= 2
+	for i := range arr {
+		arr[i] *= 2
 	}
 }
 
 func main() {
 	n := 5
 
-	// & address of operator
-	// we're passing the address of n
-	changeVal(&n)
+	// Create a pointer
+	p := &n // same as: var p *int = &n
+
+	// passing the pointer
+	changeVal(p)
 
 	fmt.Println(n)
 
-	// creating a pointer that points to n
-	var nPtr *int = &n
-
-	fmt.Println("nPtr address:", nPtr) // Address in memory
-	fmt.Println("nPtr value:", *nPtr)  // * deference operator
+	fmt.Println("p address:", p) // Address in memory
+	fmt.Println("p value:", *p)  // * deference operator
 
 	arr := [4]int{1, 2, 3, 4}
+
+	// passing the address of the array
 	doubleArrayValues(&arr)
+
 	fmt.Println(arr)
 }
