@@ -69,10 +69,15 @@ func main() {
 	result3 := sumVariadic(1, 2, 3, 4)
 	fmt.Println(result3)
 
+	// variadic function accepts also a slice unpacked with ...
+	slice := []int{1, 2, 3, 4, 5}
+	result4 := sumVariadic(slice...)
+	fmt.Println(result4)
+
 	// accept an array as argument
 	arr := []int{1, 2, 3, 4}
-	result4 := arraySum(arr)
-	fmt.Println(result4)
+	result5 := arraySum(arr)
+	fmt.Println(result5)
 
 	n := 5
 	fmt.Printf("n before changeVal: %d\n", n)

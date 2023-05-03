@@ -16,7 +16,7 @@ make allocates an array and returns a slice that refers to that array
 len(slice) // returns length
 cap(slice) // returns capacity
 
-A slice can also be formed by slicing an existing array or slice
+A slice can also be formed by slicing an existing array or slice:
 b :=[]byte{'g','o','l','a','n','g'}
 b[1:4] -> [o l a] 	// from index 1 to index 4 excluded
 b[:2]  -> [g o] 	// from start to index 2 excluded
@@ -25,16 +25,26 @@ b[:]   -> b 		// the whole slice
 */
 
 func main() {
-	// using make to create a slice of string of size 4
-	slice1 := make([]string, 4)
+	// create an empty slice
+	slice := []string{}
+
+	// append one value to the slice
+	slice = append(slice, "Alice")
+	fmt.Println(slice)
+
+	// Make creates a slice of type string of size 4 of capacity 4
+	// The values are initalized to zero values, for string it's ""
+	slice1 := make([]string, 4, 4)
+
+	// Size of the slices is the size as defined in the definition
+	fmt.Println("slice1 length:", len(slice1)) // -> 4
+
+	// Adding values to a slice
 	slice1[0] = "🍌"
 	slice1[1] = "🍍"
 	slice1[2] = "🥭"
 
-	// Size of the slices is the size as defined in the definition
-	fmt.Println(len(slice1))
-
-	// for range
+	// for loop of a slice
 	for _, v := range slice1 {
 		fmt.Println(v)
 	}

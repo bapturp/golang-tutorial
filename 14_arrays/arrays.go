@@ -17,7 +17,8 @@ func main() {
 	var arr1 [5]int
 
 	// with initial values
-	primes := [6]int{2, 3, 5, 7, 11, 13}
+	// ... specifies a length equal to the number of elements in the literal
+	primes := [...]int{2, 3, 5, 7, 11, 13}
 
 	// set values
 	arr1[0] = 1

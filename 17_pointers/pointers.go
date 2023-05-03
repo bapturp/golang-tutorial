@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // n *int represents a pointer
 func changeVal(n *int) {
@@ -11,15 +13,6 @@ func doubleArrayValues(arr *[4]int) {
 	for x := 0; x < 4; x++ {
 		arr[x] *= 2
 	}
-}
-
-func average(s ...float64) float64 {
-	var r float64
-	for _, v := range s {
-		r += v
-	}
-	r /= float64(len(s))
-	return r
 }
 
 func main() {
@@ -40,7 +33,4 @@ func main() {
 	arr := [4]int{1, 2, 3, 4}
 	doubleArrayValues(&arr)
 	fmt.Println(arr)
-
-	slice := []float64{5, 11, 19, 23}
-	fmt.Printf("Average: %.2f\n", average(slice...))
 }
